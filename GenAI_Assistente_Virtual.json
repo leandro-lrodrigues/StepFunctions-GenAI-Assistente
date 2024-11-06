@@ -1,0 +1,14 @@
+{
+  "Comment": "Máquina de estados para o assistente virtual com AWS Serverless e Amazon Bedrock",
+  "StartAt": "ProcessarRequisicao",
+  "States": {
+    "ProcessarRequisicao": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:sa-east-1::function:ProcessarRequisicaoGenAI",
+      "Next": "Finalizar"
+    },
+    "Finalizar": {
+      "Type": "Succeed"
+    }
+  }
+}
